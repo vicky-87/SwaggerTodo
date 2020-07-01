@@ -8,9 +8,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.swaggertodo.MainActivity;
 import com.example.swaggertodo.R;
+import com.example.swaggertodo.api.models.Todo;
+
+import java.util.List;
 
 public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder>{
+
     public interface todoListener{
         void onClickedTodo(int index, Todo todo);
     }
@@ -49,12 +54,12 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder>{
             todoText = itemView.findViewById(R.id.todoText);
             isDoneText = itemView.findViewById(R.id.isDoneTxt);
         }
-        public void bind(final int index, final Todo todo){
+        public void bind(final int index, final Todo todo) {
             String isDone;
             todoText.setText(todo.getTodo());
-            if (todo.getDone()){
+            if (todo.getDone()) {
                 isDone = "Done";
-            }else {
+            } else {
                 isDone = "Doing";
             }
             isDoneText.setText(isDone);
@@ -64,5 +69,6 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder>{
                     todoListener.onClickedTodo(index, todo);
                 }
             });
+        }
     }
 }

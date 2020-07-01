@@ -5,20 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.PopupOverlay"/>
+        android:theme="@style/Theme.Design.Light" />
 
     <include layout="@layout/main_content" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="30dp"
-        android:backgroundTint="@color/colorLavender"
-        android:src="@drawable/ic_add_black_24dp"
-        app:borderWidth="0dp"/>
+        android:backgroundTint="@android:color/black"
+        android:src="@color/design_default_color_background"
+        app:borderWidth="0dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
